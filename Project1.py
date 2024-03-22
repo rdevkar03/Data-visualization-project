@@ -114,7 +114,6 @@ btn_load=tk.Button(side_frame,text="Load",font=tf_sub,width=9,command=read_excel
 btn_load.place(x=15,y=148)
 
 fig,axes1=plt.subplots(2,3,figsize=(12,6))
-#fig.subplots_adjust(wspace=1.5, hspace=1.5)
 fig.tight_layout(rect=[0, 0.09, 1, 0.99], w_pad=0.8, h_pad=1.2)
 canvas1=FigureCanvasTkAgg(fig,master=window)
 canvas1.get_tk_widget().pack(side="right",fill="both",expand=True)
@@ -241,11 +240,7 @@ def barh():
     axes1[1][2].clear()
     x_axis=data[selected_option1]
     y_axis=data[selected_option2]
-    #print(x_axis)
-     
-    #print(y_axis)
-    #print(type(x_axis))
-    #print(type(y_axis))
+    
     g_data=data.groupby(selected_option1)[selected_option2].sum()
     axes1[1][2].barh(g_data.index,g_data.values)    
     axes1[1][2].set_xlabel(selected_option2)
